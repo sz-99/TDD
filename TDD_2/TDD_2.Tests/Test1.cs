@@ -1,4 +1,4 @@
-using FluentAssertions;
+﻿using FluentAssertions;
 using TDD_2;
 namespace TDD_2.Tests
 {
@@ -9,18 +9,17 @@ namespace TDD_2.Tests
         {
         }
 
-        [Test]
+        [Test, Description("Organisation!")]
         public void Test1()
         {
             Compass greatCompass = new Compass();
 
             Point input1 = Point.North;
-            Direction input2 = Direction.right;
+            Direction input2 = Direction.left;
 
             Point result = greatCompass.Rotate(input1, input2);
 
-            result.Should().Be(Point.East);
-            Assert.Pass();
+            result.Should().Be(Point.West);
         }
     }
 }
