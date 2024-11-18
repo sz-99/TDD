@@ -102,5 +102,18 @@ namespace TDD_2.Tests
 
             result.Should().Equal(new List<string>() { "example", "samples" });
         }
+
+        [Test]
+        public void CalculateLetterFrequency()
+        {
+            var analyser = new WordAnalyser();
+            string input = "Cafbhaifbuhav74689 sva r t3q63 dghc";
+
+            Dictionary<char, int> dictionary = analyser.CalculateLetterFrequency(input);
+
+            int charFrequency = dictionary['A'];
+
+            charFrequency.Should().Be(4);
+        }
     }
 }
