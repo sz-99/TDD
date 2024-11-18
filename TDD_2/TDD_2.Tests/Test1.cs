@@ -26,17 +26,6 @@ namespace TDD_2.Tests
         public void TestRotateRight()
         {
             Compass compass = new Compass();
-            //Point result1 = compass.Rotate(Point.East, Direction.left);
-            //Point result2 = compass.Rotate(Point.North, Direction.left);
-            //Point result3 = compass.Rotate(Point.West, Direction.left);
-            //Point result4 = compass.Rotate(Point.South, Direction.left);
-            //Assert.Multiple(() =>
-            //{
-            //    result1.Should().Be(Point.North);
-            //    result2.Should().Be(Point.West);
-            //    result3.Should().Be(Point.South);
-            //    result4.Should().Be(Point.East);
-            //});
 
             var testCases = new (Point point, Direction direction, Point expectedResult)[]
                 {
@@ -95,12 +84,23 @@ namespace TDD_2.Tests
         [Test]
         public void TestIsPalindrome()
         {
-            string testString = "racecar";
             var stringManipulator = new StringManipulator();
+            string testString = "racecar";
 
             bool result = stringManipulator.IsPalindrome(testString);
 
             result.Should().BeTrue();
+        }
+
+        [Test]
+        public void FindLongestWords()
+        {
+            var analyser = new WordAnalyser();
+            string input = "This is some example samples test data - come up with your own!";
+
+            var result = analyser.FindLongestWords(input);
+
+            result.Should().Contain("example", "samples");
         }
     }
 }
