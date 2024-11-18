@@ -139,6 +139,34 @@ namespace TDD_2.Tests
 
         }
 
+        [Test]
+        public void ApplyDiscount()
+        {
+            ShoppingCart cart = new ShoppingCart();
+            cart.AddItems("phone", 100);
+            
+            double result = cart.ApplyDiscount(1.5d);
+
+            result.Should().Be(150);
+
+            var testCases = new (string name, double price, double discount, double discountedPrice)[]
+                {
+                ("cheese", 50d, 2d, 100d),
+                ("argafg", 500d, -1d, -500d),
+                };
+
+            Assert.Multiple(() =>
+            {
+                foreach (var (a, b, c, expected) in testCases)
+                {
+                    cart.AddItems(a, b);
+                    double result = cart.ApplyDiscount(c);
+                    
+                    result.Should().Be(expected);
+                }
+            });
+
+        }
 
 
     }

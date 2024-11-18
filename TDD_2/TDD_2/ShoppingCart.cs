@@ -9,6 +9,7 @@ namespace TDD_2
     public class ShoppingCart
     {
         private Dictionary<string, double> _items = new Dictionary<string, double> { };
+        public double _discount { get; private set; } = 0;
 
         public bool AddItems(string name, double price)
         {
@@ -28,6 +29,20 @@ namespace TDD_2
             return total;
         }
 
+
+        public double ApplyDiscount(double discount)
+        {
+            if (!(discount >= 0 && discount <= 1))
+            {
+                throw new Exception("That's an invalid discount!");
+            }
+
+            _discount = discount;
+
+            double result = CalculateTotalPrice() * discount;
+
+            return result;
+        }
 
     }
 }
