@@ -100,7 +100,7 @@ namespace TDD_2.Tests
 
             var result = analyser.FindLongestWords(input);
 
-            result.Should().Contain("example", "samples");
+            result.Should().Equal(new List<string>() { "example", "samples" });
         }
     }
 }
