@@ -115,5 +115,31 @@ namespace TDD_2.Tests
 
             charFrequency.Should().Be(4);
         }
+
+        [Test]
+        public void AddItems()
+        {
+            ShoppingCart cart = new ShoppingCart();
+            string name = "phone";
+            double price = 100d;
+            bool result = cart.AddItems(name, price);
+
+            result.Should().BeTrue();
+
+        }
+
+        [Test]
+        public void CalculateTotalPrice()
+        {
+            ShoppingCart cart = new ShoppingCart();
+            cart.AddItems("phone", 100);
+            double result = cart.CalculateTotalPrice();
+
+            result.Should().Be(100d);
+
+        }
+
+
+
     }
 }

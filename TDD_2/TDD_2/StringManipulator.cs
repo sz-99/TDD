@@ -22,7 +22,7 @@ namespace TDD_2
             // TODO: Implement the logic to check if the input string is a palindrome
             // (A palindrome = same forwards as backwards)
             if (input == ReverseString(input)) return true;
-                return false;
+            return false;
             }
         }
     
