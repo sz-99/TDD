@@ -91,5 +91,16 @@ namespace TDD_2.Tests
 
             result.Should().Be("olleh");
         }
+
+        [Test]
+        public void TestIsPalindrome()
+        {
+            string testString = "racecar";
+            var stringManipulator = new StringManipulator();
+
+            bool result = stringManipulator.IsPalindrome(testString);
+
+            result.Should().BeTrue();
+        }
     }
 }

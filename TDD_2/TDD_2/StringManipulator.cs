@@ -19,8 +19,9 @@ namespace TDD_2
 
             public bool IsPalindrome(string input)
             {
-                // TODO: Implement the logic to check if the input string is a palindrome
-                // (A palindrome = same forwards as backwards)
+            // TODO: Implement the logic to check if the input string is a palindrome
+            // (A palindrome = same forwards as backwards)
+            if (input == ReverseString(input)) return true;
                 return false;
             }
         }
