@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace TDD_2
 {
-    internal class Compass
+    public class Compass
     {
         public Point Point { get; set; }
 
         public Point Rotate(Point point, Direction direction)
         {
             return Point.South;
+           
         }
     }
 }
