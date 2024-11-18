@@ -21,5 +21,22 @@ namespace TDD_2.Tests
 
             result.Should().Be(Point.West);
         }
+
+        [Test]
+        public void Test2()
+        {
+            Compass compass = new Compass();
+            Point result1 = compass.Rotate(Point.East, Direction.left);
+            Point result2 = compass.Rotate(Point.North, Direction.left);
+            Point result3 = compass.Rotate(Point.West, Direction.left);
+            Point result4 = compass.Rotate(Point.South, Direction.left);
+            Assert.Multiple(() =>
+            {
+                result1.Should().Be(Point.North);
+                result1.Should().Be(Point.West);
+                result1.Should().Be(Point.South);
+                result1.Should().Be(Point.East);
+            });
+        }
     }
 }
